@@ -30,17 +30,15 @@ ul_list.setAttribute("id", "ul-list");
 
 //----------------------------------------------------------------
 
-//----------------------------------------------------------------
-
 var list_pre = lists("li");
 var list_first = lists("li");
 //--
+var list_1 = lists("li");
 var list_2 = lists("li");
 var list_3 = lists("li");
 var list_4 = lists("li");
 var list_5 = lists("li");
 var list_6 = lists("li");
-var list_7 = lists("li");
 //--
 var list_last = lists("li");
 var list_next = lists("li");
@@ -51,56 +49,130 @@ function lists(tagname) {
 }
 
 //----------------------------------------------------------------
-var atag_pre = anchortags("a", "class", "btn-atag", "href", "#");
-var atag_first = anchortags("a", "class", "btn-atag", "href", "#");
-var atag_last = anchortags("a", "class", "btn-atag", "href", "#");
-var atag_next = anchortags("a", "class", "btn-atag", "href", "#");
 
-function anchortags(tagname, attname1, attvalue1, attname2, attvalue2) {
-  var atags = document.createElement(tagname);
-  atags.setAttribute(attname1, attvalue1);
-  atags.setAttribute(attname2, attvalue2);
-  return atags;
-}
+var btn_pre = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-pre",
+  "⏪Previous"
+);
+var btn_first = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-first",
+  "First"
+);
 
-//----------------------------------------------------------------
-var btn_pre = btnele("button", "id", "button", "⏪Previous");
-var btn_first = btnele("button", "id", "button", "First");
-var btn_last = btnele("button", "id", "button", "Last");
-var btn_next = btnele("button", "id", "button", "Next⏩");
+var btn_last = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-last",
+  "Last"
+);
+var btn_next = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-next",
+  "Next⏩"
+);
 
-function btnele(tagname, attname, attvalue, contenttext) {
+var btn_1 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-1",
+  "1"
+);
+var btn_2 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-2",
+  "2"
+);
+var btn_3 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-3",
+  "3"
+);
+var btn_4 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-4",
+  "4"
+);
+var btn_5 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-5",
+  "5"
+);
+var btn_6 = btnele(
+  "button",
+  "type",
+  "button",
+  "btn",
+  "btn-outline-primary",
+  "id",
+  "event-btn-6",
+  "6"
+);
+
+function btnele(
+  tagname,
+  attname1,
+  attvalue1,
+  class1,
+  class2,
+  attname2,
+  attvalue2,
+  contenttext
+) {
   var button = document.createElement(tagname);
-  button.setAttribute(attname, attvalue);
+  button.setAttribute(attname1, attvalue1);
+  button.classList.add(class1, class2);
+  button.setAttribute(attname2, attvalue2);
   button.innerHTML = contenttext;
   return button;
 }
 
 //----------------------------------------------------------------
 
-var atag_3 = anchortag("a", "class", "page-link", "href", "#", "1");
-var atag_4 = anchortag("a", "class", "page-link", "href", "#", "2");
-var atag_5 = anchortag("a", "class", "page-link", "href", "#", "3");
-var atag_6 = anchortag("a", "class", "page-link", "href", "#", "4");
-var atag_7 = anchortag("a", "class", "page-link", "href", "#", "5");
-var atag_8 = anchortag("a", "class", "page-link", "href", "#", "6");
-
-function anchortag(
-  tagname,
-  attname1,
-  attvalue1,
-  attname2,
-  attvalue2,
-  contenttext
-) {
-  var atag = document.createElement(tagname);
-  atag.setAttribute(attname1, attvalue1);
-  atag.setAttribute(attname2, attvalue2);
-  atag.innerHTML = contenttext;
-  return atag;
-}
-
-//----------------------------------------------------------------
 var table_div = createtable("div");
 table_div.setAttribute("class", "table-responsive");
 
@@ -108,9 +180,10 @@ var table_tag = createtable("table");
 table_tag.classList.add("table", "table-bordered");
 
 var table_body = createtable("tbody");
+table_body.setAttribute("id", "t-body");
 
 var table_head = createtable("thead");
-table_head.setAttribute("id","table-head");
+table_head.setAttribute("id", "table-head");
 var table_tr = createtable("tr");
 
 var table_th1 = createtable("th");
@@ -122,22 +195,169 @@ table_th2.innerText = "Name";
 var table_th3 = createtable("th");
 table_th3.innerText = "Email";
 
-var table_tr1 = createtable("tr");
-var table_td1 = createtable("td");
-table_td1.innerText = "1";
-var table_td2 = createtable("td");
-table_td2.innerText = "ARUN PRAVEEN R";
-var table_td3 = createtable("td");
-table_td3.innerText = "abc@gmail.com";
+// var table_tr1 = createtable("tr");
+// var table_td1 = createtable("td");
+// table_td1.innerText = "1";
+// var table_td2 = createtable("td");
+// table_td2.innerText = "ARUN PRAVEEN R";
+// var table_td3 = createtable("td");
+// table_td3.innerText = "abc@gmail.com";
 
 function createtable(taganme) {
   var elements = document.createElement(taganme);
   return elements;
 }
+//--------------------------------------------------------------
+
+async function paginationData() {
+  var res = await fetch(
+    "https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json"
+  );
+  var JsonFormat = await res.json();
+  // console.log(JsonFormat);
+  try {
+    var namearr = [];
+    var emailarr = [];
+    var idarr = [];
+    for (var i = 0; i < 36; i++) {
+      var name = JsonFormat[i].name;
+      namearr.push(name);
+      // console.log(name);
+      var Email = JsonFormat[i].email;
+      emailarr.push(Email);
+      // console.log(Email);
+      var id = JsonFormat[i].id;
+      idarr.push(id);
+      // console.log(id);
+    }
+    
+    for (var k = 0; k < 6; k++) {
+      passData(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+    }
+
+   
+  } catch (error) {
+    console.log(error);
+  }
+}
+paginationData();
+//-----------------------------------------------------------------
+//eventListener First add:-
+function passData(a, b, c) {
+  var addEvent = document.getElementById("event-btn-first");
+  addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+}
+
+function eventButtonFirst(idData, emailData, nameData) {
+  var row = document.createElement("tr");
+  var td1 = document.createElement("td");
+  td1.innerHTML = `${idData}`;
+  var td2 = document.createElement("td");
+  td2.innerHTML = `${emailData}`;
+  var td3 = document.createElement("td");
+  td3.innerHTML = `${nameData}`;
+  table_body.append(row);
+  row.append(td1, td2, td3);
+}
 
 //---------------------------------------------------------------
+// //eventListener 1 add:-
+// function passData(a, b, c) {
+//   var addEvent = document.getElementById("event-btn-first");
+//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+// }
 
-//appending....
+// function eventButtonFirst(idData, emailData, nameData) {
+//   var row = document.createElement("tr");
+//   var td1 = document.createElement("td");
+//   td1.innerHTML = `${idData}`;
+//   var td2 = document.createElement("td");
+//   td2.innerHTML = `${emailData}`;
+//   var td3 = document.createElement("td");
+//   td3.innerHTML = `${nameData}`;
+//   table_body.append(row);
+//   row.append(td1, td2, td3);
+// }
+
+// //---------------------------------------------------------------
+// //eventListener 2 add:-
+// function passData(a, b, c) {
+//   var addEvent = document.getElementById("event-btn-first");
+//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+// }
+
+// function eventButtonFirst(idData, emailData, nameData) {
+//   var row = document.createElement("tr");
+//   var td1 = document.createElement("td");
+//   td1.innerHTML = `${idData}`;
+//   var td2 = document.createElement("td");
+//   td2.innerHTML = `${emailData}`;
+//   var td3 = document.createElement("td");
+//   td3.innerHTML = `${nameData}`;
+//   table_body.append(row);
+//   row.append(td1, td2, td3);
+// }
+
+// //---------------------------------------------------------------
+// //eventListener 3 add:-
+// function passData(a, b, c) {
+//   var addEvent = document.getElementById("event-btn-first");
+//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+// }
+
+// function eventButtonFirst(idData, emailData, nameData) {
+//   var row = document.createElement("tr");
+//   var td1 = document.createElement("td");
+//   td1.innerHTML = `${idData}`;
+//   var td2 = document.createElement("td");
+//   td2.innerHTML = `${emailData}`;
+//   var td3 = document.createElement("td");
+//   td3.innerHTML = `${nameData}`;
+//   table_body.append(row);
+//   row.append(td1, td2, td3);
+// }
+
+// //---------------------------------------------------------------
+// //eventListener 4  add:-
+// function passData(a, b, c) {
+//   var addEvent = document.getElementById("event-btn-first");
+//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+// }
+
+// function eventButtonFirst(idData, emailData, nameData) {
+//   var row = document.createElement("tr");
+//   var td1 = document.createElement("td");
+//   td1.innerHTML = `${idData}`;
+//   var td2 = document.createElement("td");
+//   td2.innerHTML = `${emailData}`;
+//   var td3 = document.createElement("td");
+//   td3.innerHTML = `${nameData}`;
+//   table_body.append(row);
+//   row.append(td1, td2, td3);
+// }
+
+// //---------------------------------------------------------------
+// //eventListener 5  add:-
+// function passData(a, b, c) {
+//   var addEvent = document.getElementById("event-btn-first");
+//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
+// }
+
+// function eventButtonFirst(idData, emailData, nameData) {
+//   var row = document.createElement("tr");
+//   var td1 = document.createElement("td");
+//   td1.innerHTML = `${idData}`;
+//   var td2 = document.createElement("td");
+//   td2.innerHTML = `${emailData}`;
+//   var td3 = document.createElement("td");
+//   td3.innerHTML = `${nameData}`;
+//   table_body.append(row);
+//   row.append(td1, td2, td3);
+// }
+
+// //---------------------------------------------------------------
+
+//*appending....
 
 document.body.append(container);
 container.append(maindiv);
@@ -150,31 +370,29 @@ navbar.append(ul_list);
 ul_list.append(
   list_pre,
   list_first,
+  list_1,
   list_2,
   list_3,
   list_4,
   list_5,
   list_6,
-  list_7,
   list_next,
   list_last
 );
-list_pre.append(atag_pre);
-atag_pre.append(btn_pre);
-list_first.append(atag_first);
-atag_first.append(btn_first);
+list_pre.append(btn_pre);
 
-list_2.appendChild(atag_3);
-list_3.appendChild(atag_4);
-list_4.appendChild(atag_5);
-list_5.appendChild(atag_6);
-list_6.appendChild(atag_7);
-list_7.appendChild(atag_8);
+list_first.append(btn_first);
 
-list_last.append(atag_last);
-atag_last.append(btn_last);
-list_next.append(atag_next);
-atag_next.append(btn_next);
+list_1.appendChild(btn_1);
+list_2.appendChild(btn_2);
+list_3.appendChild(btn_3);
+list_4.appendChild(btn_4);
+list_5.appendChild(btn_5);
+list_6.appendChild(btn_6);
+
+list_last.append(btn_last);
+
+list_next.append(btn_next);
 
 //----------------------------------------------------------------
 
@@ -183,9 +401,3 @@ table_tag.append(table_head, table_body);
 table_head.append(table_tr);
 
 table_tr.append(table_th1, table_th2, table_th3);
-
-//----------------------------------------------------------------
-
-//Events--
-
-

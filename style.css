@@ -13,12 +13,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #table-head {
-  color: white;
+  color:lawngreen;
+  text-align: center;
 }
 
-#button {
-  border: none;
-  padding: 7px;
-  border-radius: 0;
-  outline: 0;
+#t-body{
+  color: whitesmoke;
+  text-align: center;
 }
