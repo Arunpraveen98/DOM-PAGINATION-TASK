@@ -1,7 +1,7 @@
 var description = document.createElement("p");
 description.setAttribute("id", "description");
 description.innerText =
-  "Pagination is the method of separating digital content into different pages on a website. Users can navigate between these pages by clicking links.";
+  "Pagination is the method of separating digital content into different pages on a website. Users can navigate between these pages by clicking below Buttons.";
 
 //----------------------------------------------------------------
 
@@ -195,31 +195,25 @@ table_th2.innerText = "Name";
 var table_th3 = createtable("th");
 table_th3.innerText = "Email";
 
-// var table_tr1 = createtable("tr");
-// var table_td1 = createtable("td");
-// table_td1.innerText = "1";
-// var table_td2 = createtable("td");
-// table_td2.innerText = "ARUN PRAVEEN R";
-// var table_td3 = createtable("td");
-// table_td3.innerText = "abc@gmail.com";
-
 function createtable(taganme) {
   var elements = document.createElement(taganme);
   return elements;
 }
 //--------------------------------------------------------------
 
+paginationData();
 async function paginationData() {
   var res = await fetch(
     "https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json"
   );
   var JsonFormat = await res.json();
   // console.log(JsonFormat);
+
   try {
     var namearr = [];
     var emailarr = [];
     var idarr = [];
-    for (var i = 0; i < 36; i++) {
+    for (var i = 0; i < 100; i++) {
       var name = JsonFormat[i].name;
       namearr.push(name);
       // console.log(name);
@@ -230,132 +224,256 @@ async function paginationData() {
       idarr.push(id);
       // console.log(id);
     }
-    
-    for (var k = 0; k < 6; k++) {
-      passData(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
-    }
 
-   
+    //----------------------------------------------------------------
+    //First-button:-
+
+    var addEvent = document.getElementById("event-btn-first");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      for (var k = 0; k < 6; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+          td3.innerHTML = `${nameData}`;
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+  //----------------------------------------------------------------
+  //1-button:-
+    var addEvent = document.getElementById("event-btn-1");
+    addEvent.addEventListener("click", () => {
+      var a1=document.getElementById("t-body");
+      a1.innerHTML="";
+      
+      for (var k = 6; k < 12; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+     } 
+    });
+
+  //----------------------------------------------------------------
+  //2-button:-
+    var addEvent = document.getElementById("event-btn-2");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 12; k < 18; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+     }    
+    });
+
+  //----------------------------------------------------------------
+  //3-button:-
+    var addEvent = document.getElementById("event-btn-3");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 18; k < 24; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+  //----------------------------------------------------------------
+  //4-button:-
+    var addEvent = document.getElementById("event-btn-4");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 24; k < 30; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+  //----------------------------------------------------------------
+  //5-button:-
+    var addEvent = document.getElementById("event-btn-5");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 30; k < 36; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+  //----------------------------------------------------------------
+  //6-button:-
+    var addEvent = document.getElementById("event-btn-6");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 36; k < 42; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+  //----------------------------------------------------------------
+  //Next-button:-
+    var addEvent = document.getElementById("event-btn-next");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 42; k < 48; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+  
+  //----------------------------------------------------------------
+  //Last-button:-
+    var addEvent = document.getElementById("event-btn-last");
+    addEvent.addEventListener("click", () => {
+      var a=document.getElementById("t-body");
+      a.innerHTML="";
+      
+      for (var k = 48; k < 54; k++) {
+        eventButtonFirst(`${idarr[k]}`, `${emailarr[k]}`, `${namearr[k]}`);
+        function eventButtonFirst(idData, emailData, nameData) {
+          var row = document.createElement("tr");
+          var td1 = document.createElement("td");
+
+          td1.innerHTML = `${idData}`;
+          var td2 = document.createElement("td");
+
+          td2.innerHTML = `${emailData}`;
+          var td3 = document.createElement("td");
+
+          td3.innerHTML = `${nameData}`;
+
+          table_body.append(row);
+          row.append(td1, td2, td3);
+        }
+      }
+    });
+
+   //----------------------------------------------------------------
+
+   //catch-block:-
+
   } catch (error) {
     console.log(error);
   }
 }
-paginationData();
-//-----------------------------------------------------------------
-//eventListener First add:-
-function passData(a, b, c) {
-  var addEvent = document.getElementById("event-btn-first");
-  addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-}
 
-function eventButtonFirst(idData, emailData, nameData) {
-  var row = document.createElement("tr");
-  var td1 = document.createElement("td");
-  td1.innerHTML = `${idData}`;
-  var td2 = document.createElement("td");
-  td2.innerHTML = `${emailData}`;
-  var td3 = document.createElement("td");
-  td3.innerHTML = `${nameData}`;
-  table_body.append(row);
-  row.append(td1, td2, td3);
-}
-
-//---------------------------------------------------------------
-// //eventListener 1 add:-
-// function passData(a, b, c) {
-//   var addEvent = document.getElementById("event-btn-first");
-//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-// }
-
-// function eventButtonFirst(idData, emailData, nameData) {
-//   var row = document.createElement("tr");
-//   var td1 = document.createElement("td");
-//   td1.innerHTML = `${idData}`;
-//   var td2 = document.createElement("td");
-//   td2.innerHTML = `${emailData}`;
-//   var td3 = document.createElement("td");
-//   td3.innerHTML = `${nameData}`;
-//   table_body.append(row);
-//   row.append(td1, td2, td3);
-// }
-
-// //---------------------------------------------------------------
-// //eventListener 2 add:-
-// function passData(a, b, c) {
-//   var addEvent = document.getElementById("event-btn-first");
-//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-// }
-
-// function eventButtonFirst(idData, emailData, nameData) {
-//   var row = document.createElement("tr");
-//   var td1 = document.createElement("td");
-//   td1.innerHTML = `${idData}`;
-//   var td2 = document.createElement("td");
-//   td2.innerHTML = `${emailData}`;
-//   var td3 = document.createElement("td");
-//   td3.innerHTML = `${nameData}`;
-//   table_body.append(row);
-//   row.append(td1, td2, td3);
-// }
-
-// //---------------------------------------------------------------
-// //eventListener 3 add:-
-// function passData(a, b, c) {
-//   var addEvent = document.getElementById("event-btn-first");
-//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-// }
-
-// function eventButtonFirst(idData, emailData, nameData) {
-//   var row = document.createElement("tr");
-//   var td1 = document.createElement("td");
-//   td1.innerHTML = `${idData}`;
-//   var td2 = document.createElement("td");
-//   td2.innerHTML = `${emailData}`;
-//   var td3 = document.createElement("td");
-//   td3.innerHTML = `${nameData}`;
-//   table_body.append(row);
-//   row.append(td1, td2, td3);
-// }
-
-// //---------------------------------------------------------------
-// //eventListener 4  add:-
-// function passData(a, b, c) {
-//   var addEvent = document.getElementById("event-btn-first");
-//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-// }
-
-// function eventButtonFirst(idData, emailData, nameData) {
-//   var row = document.createElement("tr");
-//   var td1 = document.createElement("td");
-//   td1.innerHTML = `${idData}`;
-//   var td2 = document.createElement("td");
-//   td2.innerHTML = `${emailData}`;
-//   var td3 = document.createElement("td");
-//   td3.innerHTML = `${nameData}`;
-//   table_body.append(row);
-//   row.append(td1, td2, td3);
-// }
-
-// //---------------------------------------------------------------
-// //eventListener 5  add:-
-// function passData(a, b, c) {
-//   var addEvent = document.getElementById("event-btn-first");
-//   addEvent.addEventListener("click", eventButtonFirst(a, b, c));
-// }
-
-// function eventButtonFirst(idData, emailData, nameData) {
-//   var row = document.createElement("tr");
-//   var td1 = document.createElement("td");
-//   td1.innerHTML = `${idData}`;
-//   var td2 = document.createElement("td");
-//   td2.innerHTML = `${emailData}`;
-//   var td3 = document.createElement("td");
-//   td3.innerHTML = `${nameData}`;
-//   table_body.append(row);
-//   row.append(td1, td2, td3);
-// }
-
-// //---------------------------------------------------------------
+//----------------------------------------------------------------
 
 //*appending....
 
@@ -401,3 +519,6 @@ table_tag.append(table_head, table_body);
 table_head.append(table_tr);
 
 table_tr.append(table_th1, table_th2, table_th3);
+
+
+//----------------------------------------------------------------
