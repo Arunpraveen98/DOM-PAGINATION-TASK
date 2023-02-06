@@ -295,15 +295,11 @@ async function paginationData() {
     });
     // ----------------------------------------------------------------
     //? Last button...
-    let count = 0;
+
     let addEvent_last = document.getElementById("event-btn-last");
     addEvent_last.addEventListener("click", () => {
-      count++;
       starting_value = 30;
       display_contents(starting_value);
-      if (starting_value === 25 || count >= 2) {
-        alert("You are already at the end of the page!");
-      }
     });
 
     // ----------------------------------------------------------------
